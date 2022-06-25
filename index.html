@@ -6,6 +6,7 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   
   <title>Frontend Mentor | Base Apparel coming soon page</title>
 
@@ -23,7 +24,8 @@
   </header>
   <main>
     <section class="hero-image">
-      <img src="images/hero-mobile.jpg">
+      <img class="mobile-hero" src="images/hero-mobile.jpg" alt="mobile-image">
+      <img class="desktop-hero" src="images/hero-desktop.jpg" alt="desktop-image">
     </section>
     <section class="hero-text">
       <h1>We're</h1>
@@ -32,19 +34,48 @@
       <p>Hello fellow shoppers! We're currently building our new fashion store. 
         Add your email below to stay up-to-date with announcements and our launch deals.</p>
     </section>
-    <section class="email">
-      <input type="email" id="email" name="email" placeholder=" Email Address">
-      <button type="submit">
-        <img src="images/icon-arrow.svg" />
-      </button>
-    </section>
+    <section class="form-section">
+    <form class="form1" id="form1">
+    
+      <input type="email" id="emailaddress" name="emailaddress" placeholder="Email Address" data-error-empty="Please enter your email" data-error-invalid="Invalid email address">
+      <button id="validate" type="submit"><input type="image" src="images/icon-arrow.svg" alt="Submit" onclick="setTimeout(myFunction, 3000)"></button>
+      
+      <!-- <button name="submit" id="validate" type="submit"> Validate
+      </button> -->
+      
+    </form>
+    <p class="loginError" style="display:none;">Please provide a valid Email</p>
+
+    
+  </section>
   </main>
   
-  <footer>
+  <!-- <footer>
     <p class="attribution">
       Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
       Coded by <a href="#">Ranjana</a>.
     </p>
-  </footer>
+  </footer> -->
+  <script>
+    $(document).ready(function () {
+    $('#validate').click(function () {
+    $('.error-message').remove();
+    $('.success-message').remove();
+                var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+                if (!emailReg.test($.trim($('#emailaddress').val()))) {
+                  $('.loginError').show().delay(3000).fadeOut(300);;
+                      return false;
+                    
+                }
+             
+});
+});
+
+
+
+function myFunction() {
+  document.getElementById("form1").reset();
+}
+  </script>
 </body>
 </html>

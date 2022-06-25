@@ -8,33 +8,39 @@
 body{
 
     font-family: 'Josefin Sans', sans-serif;
-    font-size: 16px
-
+    font-size: 16px;
+   
 }
 
 main{
     max-width: 375px;
-    height: 100vh;
+   
     display: flex;flex-direction: column;
     justify-content: center;
     align-items: center;
     background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
     /* background-image: linear-gradient(135deg, hsl(0, 80%, 86%),  hsl(0, 74%, 74%)); */
 }
+header{
+    max-width: 375px;
+}
+
+.desktop-hero{
+    visibility: hidden;
+    max-width: 0%;
+}
 
 header img{
     max-width: 34%;
     padding-top: 1.5rem;
     padding-left: 1.5rem;
-    padding-bottom: 1.5rem;
+    padding-bottom: 1rem;
 }
 section{
-    width:100%
+    max-width:100%
     
 }
-.hero-image{
-    max-width:100%;
-}
+
 
 .hero-text{
    
@@ -42,7 +48,7 @@ section{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 3rem;
+    padding-top: 2rem;
     max-width: 75%;
   
 }
@@ -77,26 +83,81 @@ p{
 
 }
 
-input
- {
-  font-size: 1.25rem ;
-  display: block;
-  box-sizing: border-box;
-  width: 60%;
-  
-  background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
-  border: 1px solid hsl(0, 6%, 24%);
-  font-size: 0.7rem;
-  text-align:start;
-  margin-top: 1rem;
-  
-  padding: 0.5rem 1rem;
-  border-radius: 15%;
-}
 
-.email{
+
+
+.form1{
     display: flex;
-    justify-content: center;
-    align-items: center;
-
+    max-width: 100%;
+    border: 2px solid  hsl(0, 36%, 70%);
+   
+    border-right: transparent;
+    margin: 1rem auto;
+    border-radius: 25px;
 }
+
+#emailaddress{
+    
+        border: transparent;
+       max-width: 90%;
+       align-self: center;
+       padding-left: 1rem;
+       background-color: transparent;
+       font-size: 0.7rem;
+       font-weight: 600;
+       color: hsl(0, 36%, 70%);
+       font-family: 'Josefin Sans', sans-serif;
+       outline: none;
+    
+}
+
+
+
+
+button{
+    background-color: hsl(0, 93%, 68%);
+    padding: 0.5rem 0.5rem;
+    border-radius: 25px;
+    border: 1px solid hsl(0, 93%, 68%);
+    align-self: flex-end;
+}
+
+.loginError{
+    align-self: center;
+    color: hsl(0, 93%, 68%);
+    padding-left: 1rem;
+    padding-top: 0rem;
+}
+
+@media only screen and (width: 1440px) {
+    main{
+        max-width: 1440px;
+        background-image: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+       
+    }
+    header{
+        max-width: 1440px;
+    }
+    
+    header img{
+        max-width: 100%;
+        padding-top: 1.5rem;
+        padding-left: 1.5rem;
+        padding-bottom: 1rem;
+    }
+
+    .mobile-hero{
+        visibility: hidden;
+        max-width: 0%;
+    }
+
+    .desktop-hero{
+        visibility:visible;
+        max-width: 100%;
+    }
+
+    section{
+        max-width:100%
+        
+    }
+  }
